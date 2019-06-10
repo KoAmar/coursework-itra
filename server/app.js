@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const mongoose = require('mongoose');
-const url = 'mongodb://localhost/blogDb';
+const url = 'mongodb://localhost/fanficDB';
 
 const User = require('./model/user');
 const Post = require('./model/post');
@@ -111,4 +111,4 @@ app.post('/api/post/deletePost', (req, res) => {
     });
 });
 
-app.listen(3000, () => console.log('Blog server running on port 3000!'));
+app.listen(3000, () => console.log('Blog server running on http://localhost:3000'));

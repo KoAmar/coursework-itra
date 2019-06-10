@@ -13,7 +13,7 @@ export class LoginService {
     return this.http.post('/api/user/login', {
       username: user.username,
       password: user.password
-    })
+    });
   }
 
 }

@@ -3,10 +3,10 @@ const Schema = mongoose.Schema;
 
 // create a schema
 const userSchema = new Schema({
-    username: {type: String, required: true, unique: true},
-    password: {type: String, required: true},
+    username: {type: String},
+    password: {type: String},
     name: {type: String}
-}, {collection: 'user'});
+}, {collection: 'users'});
 
 const User = mongoose.model('User', userSchema);
 

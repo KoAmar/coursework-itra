@@ -51,7 +51,7 @@ export class ShowPostComponent implements OnInit {
     this.showPostService.deletePost(this.post_to_delete._id).subscribe(res => {
       this.getAllPost();
       this.closeBtn.nativeElement.click();
-    })
+    });
   }
 
 }
