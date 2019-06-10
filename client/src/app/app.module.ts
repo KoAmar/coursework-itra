@@ -1,6 +1,6 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {ROUTING} from './app.routing';
+import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
@@ -21,8 +21,8 @@ import {CommonService} from './service/common.service';
     AddPostComponent
   ],
   imports: [
-    BrowserModule,
     ROUTING,
+    BrowserModule,
     FormsModule,
     HttpClientModule
   ],

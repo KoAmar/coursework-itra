@@ -2,6 +2,7 @@
 .header,
 .marketing,
 .footer {
+  margin-top: 1rem;
   padding-right: 1rem;
   padding-left: 1rem;
 }
@@ -9,7 +10,8 @@
 /* Custom page header */
 .header {
   padding-bottom: 1rem;
-  border-bottom: .05rem solid #e5e5e5;
+  border-bottom: .1rem solid gray;
+  margin-bottom: 1rem;
 }
 
 /* Make the masthead heading the same height as the navigation */
@@ -22,8 +24,7 @@
 /* Custom page footer */
 .footer {
   padding-top: 1.5rem;
-  color: #777;
-  border-top: .05rem solid #e5e5e5;
+  border-top: .1rem solid gray;
 }
 
 /* Customize container */
@@ -65,11 +66,6 @@
   .footer {
     padding-right: 0;
     padding-left: 0;
-  }
-
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 2rem;
   }
 
   /* Remove the bottom border on the jumbotron for visual effect */
