@@ -11,15 +11,22 @@ export class HomeComponent {
 
   @ViewChild('addPost') addBtn: ElementRef;
 
+  // todo: https://www.npmjs.com/package/ngx-cookie-service
+  // NGX Cookie Service
   constructor(private commonService: CommonService, private router: Router) {
-
-    if (!localStorage.getItem('loggedInUser')) {
+    if (!
+      localStorage.getItem('loggedInUser')) {
       this.router.navigate(['/']);
     }
 
     this.commonService.postEdit_Observable.subscribe(res => {
-      this.addBtn.nativeElement.click();
-    });
+        this.addBtn.nativeElement.click();
+      }
+    );
+
+  }
+
+  login() {
 
   }
 
