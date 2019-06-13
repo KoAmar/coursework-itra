@@ -1,47 +1,42 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ReactiveFormsModule} from '@angular/forms';
+import {OverlayContainer, OverlayModule} from '@angular/cdk/overlay';
+import {
+  MatButtonModule,
+  MatToolbarModule,
+  MatFormFieldModule,
+  MatDialogModule,
+  MatSlideToggleModule
+} from '@angular/material';
+
 import {AppRoutingModule} from './app-routing.module';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {
-  MatButtonToggleModule,
-  MatButtonModule,
-  MatToolbarModule,
-  MatSidenavModule,
-  MatIconModule,
-  MatListModule,
-  MatMenuModule,
-  MatFormFieldModule
-} from '@angular/material';
 import {HomeComponent} from './home/home.component';
+import { LoginDialogComponent } from './home/login-dialog/login-dialog.component';
 
-import {DialogOverviewExample, DialogOverviewExampleDialog} from './input-dialog/input-dialog.component';
-
-const MaterialComponents = [
-  MatButtonToggleModule,
-  MatButtonModule,
-  MatToolbarModule,
-  MatSidenavModule,
-  MatIconModule,
-  MatListModule,
-  MatMenuModule,
-  MatFormFieldModule
-];
 
 @NgModule({
   declarations: [
     HomeComponent,
-    DialogOverviewExample,
-    DialogOverviewExampleDialog
+    LoginDialogComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialComponents
+    OverlayModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatSlideToggleModule
   ],
   providers: [],
-  bootstrap: [HomeComponent]
+  bootstrap: [HomeComponent],
+  entryComponents: [LoginDialogComponent]
 })
 export class AppModule {
 }
