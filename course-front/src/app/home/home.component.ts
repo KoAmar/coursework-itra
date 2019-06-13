@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
     console.log(this.loginForm);
   }
 
-  onSetTheme() {
+  changeTheme() {
     this.darkTheme = !this.darkTheme;
     console.log(this.darkTheme);
   }

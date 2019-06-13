@@ -1,0 +1,29 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" mode="over">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <mat-slide-toggle
+        class="theme-toggle"
+        (toggleChange)="darkTheme?onSetTheme('dark-theme'):onSetTheme('light-theme')">Light Theme
+      </mat-slide-toggle>
+      <a href="#" mat-list-item>Link 1</a>
+      <a href="#" mat-list-item>Link 2</a>
+      <a href="#" mat-list-item>Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <!--suppress JSIgnoredPromiseFromCall -->
+      <button (click)="drawer.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Super-Fanfic</span>
+      <span><button (click)="onSetTheme('light-theme')" mat-raised-button>light</button></span>
+    </mat-toolbar>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </mat-sidenav-content>
+</mat-sidenav-container>

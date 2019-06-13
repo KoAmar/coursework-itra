@@ -8,19 +8,21 @@ import {
   MatToolbarModule,
   MatFormFieldModule,
   MatDialogModule,
-  MatSlideToggleModule
+  MatSlideToggleModule, MatListModule, MatIconModule, MatSidenavModule, MatSelectModule
 } from '@angular/material';
 
 import {AppRoutingModule} from './app-routing.module';
 
 import {HomeComponent} from './home/home.component';
-import { LoginDialogComponent } from './home/login-dialog/login-dialog.component';
+import {LoginDialogComponent} from './home/login-dialog/login-dialog.component';
+import {NavigationComponent} from './navigation/navigation.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -32,10 +34,14 @@ import { LoginDialogComponent } from './home/login-dialog/login-dialog.component
     MatToolbarModule,
     MatFormFieldModule,
     MatDialogModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatSelectModule,
   ],
   providers: [],
-  bootstrap: [HomeComponent],
+  bootstrap: [NavigationComponent],
   entryComponents: [LoginDialogComponent]
 })
 export class AppModule {
