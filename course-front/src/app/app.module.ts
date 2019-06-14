@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {OverlayModule} from '@angular/cdk/overlay';
 import {
   MatButtonModule, MatToolbarModule, MatFormFieldModule, MatDialogModule,
@@ -49,6 +49,7 @@ import { PostPageComponent } from './post-page/post-page.component';
     MatSelectModule,
     MatInputModule,
     MatCardModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [MainMenuComponent],

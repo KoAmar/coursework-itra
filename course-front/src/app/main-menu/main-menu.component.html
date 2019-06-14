@@ -11,9 +11,10 @@
       <a (click)="drawerToggleResultPromise = drawer.toggle();" mat-list-item routerLink="/user">My page</a>
       <a (click)="drawerToggleResultPromise = drawer.toggle();" mat-list-item routerLink="/admin">Admin page</a>
       <mat-slide-toggle
-        (toggleChange)="darkTheme?onSetTheme('dark-theme'):onSetTheme('light-theme')"
+        [(ngModel)]="darkTheme"
+        (toggleChange)="toggleTheme()"
         class="theme-toggle"
-        mat-list-item>Light Theme
+        mat-list-item>Dark theme
       </mat-slide-toggle>
     </mat-nav-list>
   </mat-sidenav>
@@ -24,15 +25,14 @@
       </button>
       <span>Super-Fanfic</span>
       <span class="spacer"></span>
-      <span>
-        <mat-form-field appearance="standard" class="search-field" color="warn">
-        <mat-label>Search</mat-label>
-        <input #searchField matInput placeholder="Search for recipes..."
-               type="text">
-      </mat-form-field>
-      <button mat-icon-button routerLink="/search/pattern/{{searchField.value}}"><mat-icon>search</mat-icon></button>
-
-      </span>
+<!--      <span>-->
+<!--        <mat-form-field appearance="standard" class="search-field" color="warn">-->
+<!--        <mat-label>Search</mat-label>-->
+<!--        <input #searchField matInput placeholder="Search for recipes..."-->
+<!--               type="text">-->
+<!--      </mat-form-field>-->
+<!--      <button mat-icon-button routerLink="/search/pattern/{{searchField.value}}"><mat-icon>search</mat-icon></button>-->
+<!--      </span>-->
     </mat-toolbar>
     <router-outlet></router-outlet>
 

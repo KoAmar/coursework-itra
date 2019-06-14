@@ -9,20 +9,44 @@ import {OverlayContainer} from '@angular/cdk/overlay';
 })
 export class MainMenuComponent {
   @HostBinding('class') componentCssClass;
-  private darkTheme: boolean;
   drawerToggleResultPromise: Promise<MatDrawerToggleResult>;
+  private darkTheme: boolean;
 
   constructor(public overlayContainer: OverlayContainer) {
+    // this.currentTheme = localStorage.getItem('currentTheme');
+    // this.overlayContainer.getContainerElement().classList.add(this.currentTheme);
+    // this.componentCssClass = this.currentTheme;
+    switch (localStorage.getItem('darkMode')) {
+      case 'true':
+        this.setDarkTheme();
+        break;
+      case 'false':
+        this.setLightTheme();
+        break;
+      default:
+        this.setDarkTheme();
+    }
   }
 
+  toggleTheme() {
+    this.darkTheme ? this.setLightTheme() : this.setDarkTheme();
+  }
+
+  setDarkTheme() {
+    this.darkTheme = true;
+    localStorage.setItem('darkMode', String(this.darkTheme));
+    this.onSetTheme('dark-theme');
+  }
+
+  setLightTheme() {
+    this.darkTheme = false;
+    localStorage.setItem('darkMode', String(this.darkTheme));
+    this.onSetTheme('light-theme');
+  }
 
   onSetTheme(theme) {
-    this.darkTheme = !this.darkTheme;
     this.overlayContainer.getContainerElement().classList.add(theme);
     this.componentCssClass = theme;
-  }
 
-  olert() {
-    alert('2');
   }
 }
