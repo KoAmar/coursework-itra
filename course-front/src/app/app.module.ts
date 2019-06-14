@@ -10,25 +10,23 @@ import {
 
 import {AppRoutingModule} from './app-routing.module';
 
-import {HomeComponent} from './home/home.component';
 import {MainMenuComponent} from './main-menu/main-menu.component';
-import {UserPageComponent} from './user-page/user-page.component';
-import {AdminPageComponent} from './admin-page/admin-page.component';
-import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {PostsPageComponent} from './posts-page/posts-page.component';
-import {PostPageComponent} from './post-page/post-page.component';
-import {RegisterDialogComponent} from './main-menu/register-dialog/register-dialog.component';
-import {LoginDialogComponent} from './main-menu/login-dialog/login-dialog.component';
+import {UserPageComponent} from './main-menu/pages/user-page/user-page.component';
+import {AdminPageComponent} from './main-menu/pages/admin-page/admin-page.component';
+import {PageNotFoundComponent} from './main-menu/pages/page-not-found/page-not-found.component';
+import {HomePageComponent} from './main-menu/pages/home-page/home-page.component';
+import {PostPageComponent} from './main-menu/pages/post-page/post-page.component';
+import {RegisterDialogComponent} from './main-menu/dialogs/register-dialog/register-dialog.component';
+import {LoginDialogComponent} from './main-menu/dialogs/login-dialog/login-dialog.component';
 
 
 @NgModule({
   declarations: [
-    HomeComponent,
     MainMenuComponent,
     UserPageComponent,
     AdminPageComponent,
     PageNotFoundComponent,
-    PostsPageComponent,
+    HomePageComponent,
     PostPageComponent,
     RegisterDialogComponent,
     LoginDialogComponent,

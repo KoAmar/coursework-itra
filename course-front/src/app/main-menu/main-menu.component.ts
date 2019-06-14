@@ -1,8 +1,8 @@
 import {Component, HostBinding} from '@angular/core';
 import {MatDialog, MatDrawerToggleResult} from '@angular/material';
 import {OverlayContainer} from '@angular/cdk/overlay';
-import {RegisterDialogComponent} from './register-dialog/register-dialog.component';
-import {LoginDialogComponent} from './login-dialog/login-dialog.component';
+import {RegisterDialogComponent} from './dialogs/register-dialog/register-dialog.component';
+import {LoginDialogComponent} from './dialogs/login-dialog/login-dialog.component';
 
 @Component({
   selector: 'app-navigation',

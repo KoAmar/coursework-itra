@@ -28,7 +28,7 @@ export class RegisterDialogComponent {
     this.dialogRef.close();
   }
 
-  signUpClick(): void {
+  registerClick(): void {
     // this.authenticationService.signUp(this.username, this.email, this.password)
     //   .subscribe(infoResponse => {
     //     if (infoResponse.success) {

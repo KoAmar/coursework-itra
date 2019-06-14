@@ -22,7 +22,7 @@ export class LoginDialogComponent {
     this.dialogRef.close();
   }
 
-  signInClick(): void {
+  registerClick(): void {
     // this.authenticationService.signIn(this.username, this.password);
     this.dialogRef.close();
   }

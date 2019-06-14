@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-posts',
-  templateUrl: './posts-page.component.html',
-  styleUrls: ['./posts-page.component.scss']
+  selector: 'app-home-page',
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.component.scss']
 })
-export class PostsPageComponent implements OnInit {
+export class HomePageComponent implements OnInit {
   private postsPrev = [
     {
       name: 'pavlik',

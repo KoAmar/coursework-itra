@@ -1,13 +1,13 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {AdminPageComponent} from './admin-page/admin-page.component';
-import {UserPageComponent} from './user-page/user-page.component';
-import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {PostsPageComponent} from './posts-page/posts-page.component';
-import {PostPageComponent} from './post-page/post-page.component';
+import {AdminPageComponent} from './main-menu/pages/admin-page/admin-page.component';
+import {UserPageComponent} from './main-menu/pages/user-page/user-page.component';
+import {PageNotFoundComponent} from './main-menu/pages/page-not-found/page-not-found.component';
+import {HomePageComponent} from './main-menu/pages/home-page/home-page.component';
+import {PostPageComponent} from './main-menu/pages/post-page/post-page.component';
 
 const routes: Routes = [
-  {path: '', component: PostsPageComponent},
+  {path: '', component: HomePageComponent},
   {path: 'post', component: PostPageComponent},
   {path: 'admin', component: AdminPageComponent},
   {path: 'user', component: UserPageComponent},
