@@ -4,6 +4,7 @@
       <span class="menu-header">Menu</span>
     </mat-toolbar>
     <mat-nav-list>
+      <a (click)="drawerToggleResultPromise = drawer.toggle();" mat-list-item routerLink="/">Home</a>
       <a (click)="drawerToggleResultPromise = drawer.toggle();" mat-list-item routerLink="/">Login</a>
       <a (click)="drawerToggleResultPromise = drawer.toggle();" mat-list-item routerLink="/">Register</a>
       <a (click)="drawerToggleResultPromise = drawer.toggle();" mat-list-item routerLink="/">Logout</a>
