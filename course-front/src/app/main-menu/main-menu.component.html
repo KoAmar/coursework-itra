@@ -1,0 +1,39 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" mode="over">
+    <mat-toolbar>
+      <span class="menu-header">Menu</span>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a (click)="drawerToggleResultPromise = drawer.toggle();" mat-list-item routerLink="/">Login</a>
+      <a (click)="drawerToggleResultPromise = drawer.toggle();" mat-list-item routerLink="/">Register</a>
+      <a (click)="drawerToggleResultPromise = drawer.toggle();" mat-list-item routerLink="/">Logout</a>
+      <a (click)="drawerToggleResultPromise = drawer.toggle();" mat-list-item routerLink="/user">My page</a>
+      <a (click)="drawerToggleResultPromise = drawer.toggle();" mat-list-item routerLink="/admin">Admin page</a>
+      <mat-slide-toggle
+        (toggleChange)="darkTheme?onSetTheme('dark-theme'):onSetTheme('light-theme')"
+        class="theme-toggle"
+        mat-list-item>Light Theme
+      </mat-slide-toggle>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button (click)="drawerToggleResultPromise = drawer.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Super-Fanfic</span>
+      <span class="spacer"></span>
+      <span>
+        <mat-form-field appearance="standard" class="search-field" color="warn">
+        <mat-label>Search</mat-label>
+        <input #searchField matInput placeholder="Search for recipes..."
+               type="text">
+      </mat-form-field>
+      <button mat-icon-button routerLink="/search/pattern/{{searchField.value}}"><mat-icon>search</mat-icon></button>
+
+      </span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

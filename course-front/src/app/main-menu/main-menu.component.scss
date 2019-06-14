@@ -6,16 +6,21 @@
   width: 200px;
 }
 
-.sidenav .mat-toolbar {
-  //background: inherit;
-}
-
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
   z-index: 1;
 }
 
-.theme-toggle{
+.spacer {
+  flex: 1 1 auto;
+}
+
+.theme-toggle {
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.menu-header{
   margin-left: 1rem;
 }

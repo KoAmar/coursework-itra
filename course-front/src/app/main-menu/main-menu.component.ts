@@ -1,21 +1,20 @@
 import {Component, HostBinding} from '@angular/core';
-import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import {MatDrawerToggleResult} from '@angular/material';
 import {OverlayContainer} from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
+  templateUrl: './main-menu.component.html',
+  styleUrls: ['./main-menu.component.scss']
 })
-export class NavigationComponent {
+export class MainMenuComponent {
+  @HostBinding('class') componentCssClass;
   private darkTheme: boolean;
+  drawerToggleResultPromise: Promise<MatDrawerToggleResult>;
 
   constructor(public overlayContainer: OverlayContainer) {
   }
 
-  @HostBinding('class') componentCssClass;
 
   onSetTheme(theme) {
     this.darkTheme = !this.darkTheme;
@@ -23,4 +22,7 @@ export class NavigationComponent {
     this.componentCssClass = theme;
   }
 
+  olert() {
+    alert('2');
+  }
 }
