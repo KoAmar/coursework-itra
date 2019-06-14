@@ -11,25 +11,27 @@ import {
 import {AppRoutingModule} from './app-routing.module';
 
 import {HomeComponent} from './home/home.component';
-import {LoginDialogComponent} from './home/login-dialog/login-dialog.component';
 import {MainMenuComponent} from './main-menu/main-menu.component';
-import { UserPageComponent } from './user-page/user-page.component';
-import { AdminPageComponent } from './admin-page/admin-page.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { PostsPageComponent } from './posts-page/posts-page.component';
-import { PostPageComponent } from './post-page/post-page.component';
+import {UserPageComponent} from './user-page/user-page.component';
+import {AdminPageComponent} from './admin-page/admin-page.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {PostsPageComponent} from './posts-page/posts-page.component';
+import {PostPageComponent} from './post-page/post-page.component';
+import {RegisterDialogComponent} from './main-menu/register-dialog/register-dialog.component';
+import {LoginDialogComponent} from './main-menu/login-dialog/login-dialog.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    LoginDialogComponent,
     MainMenuComponent,
     UserPageComponent,
     AdminPageComponent,
     PageNotFoundComponent,
     PostsPageComponent,
     PostPageComponent,
+    RegisterDialogComponent,
+    LoginDialogComponent,
   ],
   imports: [
 
@@ -53,7 +55,7 @@ import { PostPageComponent } from './post-page/post-page.component';
   ],
   providers: [],
   bootstrap: [MainMenuComponent],
-  entryComponents: [LoginDialogComponent]
+  entryComponents: [RegisterDialogComponent, LoginDialogComponent]
 })
 export class AppModule {
 }

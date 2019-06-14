@@ -4,12 +4,12 @@
       <span class="menu-header">Menu</span>
     </mat-toolbar>
     <mat-nav-list>
-      <a (click)="drawerToggleResultPromise = drawer.toggle();" mat-list-item routerLink="/">Home</a>
-      <a (click)="drawerToggleResultPromise = drawer.toggle();" mat-list-item routerLink="/">Login</a>
-      <a (click)="drawerToggleResultPromise = drawer.toggle();" mat-list-item routerLink="/">Register</a>
-      <a (click)="drawerToggleResultPromise = drawer.toggle();" mat-list-item routerLink="/">Logout</a>
-      <a (click)="drawerToggleResultPromise = drawer.toggle();" mat-list-item routerLink="/user">My page</a>
-      <a (click)="drawerToggleResultPromise = drawer.toggle();" mat-list-item routerLink="/admin">Admin page</a>
+      <a mat-list-item routerLink="/">Home</a>
+      <a mat-list-item (click)="openLoginDialog()">Login</a>
+      <a mat-list-item (click)="openRegisterDialog()" >Register</a>
+      <a mat-list-item routerLink="/">Logout</a>
+      <a mat-list-item routerLink="/user">My page</a>
+      <a mat-list-item routerLink="/admin">Admin page</a>
       <mat-slide-toggle
         [(ngModel)]="darkTheme"
         (toggleChange)="toggleTheme()"
@@ -20,10 +20,12 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button (click)="drawerToggleResultPromise = drawer.toggle()" mat-icon-button>
+      <button class="menu-button" (click)="drawerToggleResultPromise = drawer.toggle()"
+              [@.disabled]="false"
+              mat-icon-button>
         <mat-icon>menu</mat-icon>
       </button>
-      <span>Super-Fanfic</span>
+      <span>Fanfirio</span>
       <span class="spacer"></span>
 <!--      <span>-->
 <!--        <mat-form-field appearance="standard" class="search-field" color="warn">-->
