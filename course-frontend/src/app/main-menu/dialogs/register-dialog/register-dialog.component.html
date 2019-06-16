@@ -44,9 +44,7 @@
       </mat-error>
 
       <div *ngIf="errors">
-        <mat-error *ngFor="let message of messages">
-          {{message}}
-        </mat-error>
+        <mat-error>{{message}}</mat-error>
       </div>
     </div>
   </div>

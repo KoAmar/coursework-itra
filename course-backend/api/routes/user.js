@@ -4,9 +4,9 @@ const router = express.Router();
 const UserController = require('../controllers/user');
 const checkAuth = require('../middleware/check-auth');
 
-router.post("/signup", UserController.user_signup);
+router.post("/register", UserController.user_register);
 
-router.get("/signup/:activationID", UserController.user_confirm);
+router.get("/register/:activationID", UserController.user_confirm);
 
 router.post("/login", UserController.user_login);
 

@@ -1,16 +1,18 @@
 const nodemailer = require('nodemailer');
+var config = require('../../config.json');
+
 
 module.exports.send = (mail, address, id) => {
     var transporter = nodemailer.createTransport({
-        service: 'gmail',
+        service: config.emailConfirm.service,
         auth: {
-            user: 'nodemailer9500@gmail.com',
-            pass: '96NjgBZ3pcyCHiU'
+            user: config.emailConfirm.from,
+            pass: config.emailConfirm.pass
         }
     });
 
     var mailOptions = {
-        from: 'nodemailer9500@gmail.com',
+        from: config.emailConfirm.from,
         to: mail,
         subject: 'Login',
         text: `For to complete registration you must click the link below:

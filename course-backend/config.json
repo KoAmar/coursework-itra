@@ -1,0 +1,21 @@
+{
+  "mongo": {
+    "local": "localhost:27017",
+    "cluster": "@itracluster-nrd0z.mongodb.net/",
+    "mongo": "test?retryWrites=true&w=majority",
+    "MONGO_ATLAS_PW": "admin111",
+    "name": "FanficDB"
+  },
+  "JWT_KEY": "secret",
+  "emailConfirm": {
+    "service": "gmail",
+    "from": "nodemailer9500@gmail.com",
+    "pass": "96NjgBZ3pcyCHiU"
+  },
+  "URL": {
+    "frontend": "http://localhost:4200"
+  },
+  "": {
+  },
+  "server": {}
+}

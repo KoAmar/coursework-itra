@@ -3,10 +3,12 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {OverlayModule} from '@angular/cdk/overlay';
+import {HttpClientModule} from '@angular/common/http';
 import {
   MatButtonModule, MatToolbarModule, MatFormFieldModule, MatDialogModule,
   MatSlideToggleModule, MatListModule, MatIconModule, MatSidenavModule, MatSelectModule, MatInputModule, MatCardModule
 } from '@angular/material';
+
 
 import {AppRoutingModule} from './app-routing.module';
 
@@ -18,6 +20,8 @@ import {HomePageComponent} from './main-menu/pages/home-page/home-page.component
 import {PostPageComponent} from './main-menu/pages/post-page/post-page.component';
 import {RegisterDialogComponent} from './main-menu/dialogs/register-dialog/register-dialog.component';
 import {LoginDialogComponent} from './main-menu/dialogs/login-dialog/login-dialog.component';
+import {AuthService} from './services/auth.service';
+import { ConfirmedPageComponent } from './main-menu/pages/confirmed-page/confirmed-page.component';
 
 
 @NgModule({
@@ -30,12 +34,13 @@ import {LoginDialogComponent} from './main-menu/dialogs/login-dialog/login-dialo
     PostPageComponent,
     RegisterDialogComponent,
     LoginDialogComponent,
+    ConfirmedPageComponent,
   ],
   imports: [
-
+    AppRoutingModule,
+    HttpClientModule,
     BrowserModule,
     ReactiveFormsModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     OverlayModule,
     MatButtonModule,
@@ -51,7 +56,7 @@ import {LoginDialogComponent} from './main-menu/dialogs/login-dialog/login-dialo
     MatCardModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [MainMenuComponent],
   entryComponents: [RegisterDialogComponent, LoginDialogComponent]
 })

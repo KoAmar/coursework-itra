@@ -4,12 +4,14 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
+var config = require('./config');
 const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
 const userRoutes = require('./api/routes/user');
 
 mongoose.connect(
-    "mongodb://localhost:27017/test",
+    `mongodb://${config.mongo.local}/${config.mongo.name}`,
+    // Admin:${config.mongo.MONGO_ATLAS_PW}${config.mongo.cluster}
     // "mongodb://Admin:admin111@itracluster-nrd0z.mongodb.net/test?retryWrites=true&w=majority",
     {useMongoClient: true}
 );

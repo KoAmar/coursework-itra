@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import {AuthenticationService} from "../../../../../v5/frontend/src/app/services/authentication.service";
+// import {AuthService} from "../../../../../v5/frontend/src/app/services/authentication.service";
 import {MatDialogRef} from '@angular/material';
 
 @Component({
@@ -15,7 +15,7 @@ export class LoginDialogComponent {
 
   constructor(
     private dialogRef: MatDialogRef<LoginDialogComponent>,
-    // private authenticationService: AuthenticationService
+    // private authenticationService: AuthService
   ) {}
 
   onCancelClick(): void {
