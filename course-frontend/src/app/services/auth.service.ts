@@ -6,9 +6,22 @@ import {environment} from '../../environments/environment';
 import {RestResponse} from '../models/rest-responce.model';
 import {LoginResponse} from '../models/auth/login-responce.model';
 
+
 @Injectable({providedIn: 'root'})
 export class AuthService {
-  constructor(private httpClient: HttpClient,) {
+  // public currentUser:User;
+
+  constructor(private httpClient: HttpClient) {
+  }
+
+  public parseJwt(token) {
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    var jsonPayload = decodeURIComponent(atob(base64).split('').map((c) => {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
   }
 
   public static currentUser(): string {

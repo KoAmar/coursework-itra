@@ -18,10 +18,10 @@ import {AdminPageComponent} from './main-menu/pages/admin-page/admin-page.compon
 import {PageNotFoundComponent} from './main-menu/pages/page-not-found/page-not-found.component';
 import {HomePageComponent} from './main-menu/pages/home-page/home-page.component';
 import {PostPageComponent} from './main-menu/pages/post-page/post-page.component';
-import {RegisterDialogComponent} from './main-menu/dialogs/register-dialog/register-dialog.component';
-import {LoginDialogComponent} from './main-menu/dialogs/login-dialog/login-dialog.component';
+import {RegisterDialogComponent} from './dialogs/register-dialog/register-dialog.component';
+import {LoginDialogComponent} from './dialogs/login-dialog/login-dialog.component';
 import {ConfirmedPageComponent} from './main-menu/pages/confirmed-page/confirmed-page.component';
-import {InfoDialogComponent} from './main-menu/dialogs/info-dialog/info-dialog.component';
+import {InfoDialogComponent} from './dialogs/info-dialog/info-dialog.component';
 
 import {AuthService} from './services/auth.service';
 import {CallDialogService} from './services/call-dialog.service';

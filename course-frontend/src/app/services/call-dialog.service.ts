@@ -1,15 +1,17 @@
 import {Injectable} from '@angular/core';
-import {LoginDialogComponent} from '../main-menu/dialogs/login-dialog/login-dialog.component';
-import {RegisterDialogComponent} from '../main-menu/dialogs/register-dialog/register-dialog.component';
-import {InfoDialogComponent} from '../main-menu/dialogs/info-dialog/info-dialog.component';
+import {LoginDialogComponent} from '../dialogs/login-dialog/login-dialog.component';
+import {RegisterDialogComponent} from '../dialogs/register-dialog/register-dialog.component';
+import {InfoDialogComponent} from '../dialogs/info-dialog/info-dialog.component';
 import {MatDialog} from '@angular/material';
+import {AuthService} from "./auth.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CallDialogService {
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog,
+              private auth: AuthService) {
   }
 
 
@@ -20,7 +22,7 @@ export class CallDialogService {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.showMessageBox(result);
+        this.showMessageBox(JSON.stringify(this.auth.parseJwt(result)));
       }
     });
   }

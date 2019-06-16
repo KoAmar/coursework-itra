@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialogRef} from '@angular/material';
-import {AuthService} from '../../../services/auth.service';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-login-dialog',
@@ -24,7 +24,7 @@ export class LoginDialogComponent {
     this.dialogRef.close();
   }
 
-  registerClick(): void {
+  loginClick(): void {
     this.authenticationService.login(this.email, this.password).subscribe(
       (data) => {
         if (data.success) {
