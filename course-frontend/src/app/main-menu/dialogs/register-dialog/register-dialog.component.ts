@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialogRef} from '@angular/material';
 import {AuthService} from '../../../services/auth.service';
-import {RestResponse} from '../../../models/rest-responce.model';
 
 @Component({
   selector: 'app-register-dialog',
@@ -34,14 +33,13 @@ export class RegisterDialogComponent {
     this.authenticationService.register(this.username, this.email, this.password)
       .subscribe((data) => {
         if (data.success) {
-          alert('Check your email for new messages)');
-          this.dialogRef.close();
+          this.dialogRef.close('Check your email for new messages)');
         } else {
           this.message = data.message;
           this.errors = true;
         }
       }, (err) => {
-        this.message = err.message;
+        this.message = err.toString();
         this.errors = true;
       });
 

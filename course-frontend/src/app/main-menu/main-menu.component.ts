@@ -1,8 +1,7 @@
 import {Component, HostBinding} from '@angular/core';
-import {MatDialog, MatDrawerToggleResult} from '@angular/material';
+import {MatDrawerToggleResult} from '@angular/material';
 import {OverlayContainer} from '@angular/cdk/overlay';
-import {RegisterDialogComponent} from './dialogs/register-dialog/register-dialog.component';
-import {LoginDialogComponent} from './dialogs/login-dialog/login-dialog.component';
+import {CallDialogService} from '../services/call-dialog.service';
 
 @Component({
   selector: 'app-navigation',
@@ -15,7 +14,7 @@ export class MainMenuComponent {
   private darkTheme: boolean;
 
   constructor(public overlayContainer: OverlayContainer,
-              public dialog: MatDialog) {
+              private dialogService: CallDialogService) {
     switch (localStorage.getItem('darkMode')) {
       case 'true':
         this.setDarkTheme();
@@ -50,25 +49,5 @@ export class MainMenuComponent {
 
   }
 
-  openLoginDialog(): void {
-    const dialogRef = this.dialog.open(LoginDialogComponent, {
-      data: {name: 'this.name', animal: 'this.animal'}
-    });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      console.log(result);
-    });
-  }
-
-  openRegisterDialog() {
-    const dialogRef = this.dialog.open(RegisterDialogComponent, {
-      data: {name: 'this.name', animal: 'this.animal'}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      console.log(result);
-    });
-  }
 }

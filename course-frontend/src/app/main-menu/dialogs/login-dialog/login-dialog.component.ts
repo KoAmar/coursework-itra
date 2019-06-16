@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-// import {AuthService} from "../../../../../v5/frontend/src/app/services/authentication.service";
+import {Component, OnInit} from '@angular/core';
 import {MatDialogRef} from '@angular/material';
+import {AuthService} from '../../../services/auth.service';
 
 @Component({
   selector: 'app-login-dialog',
@@ -10,20 +10,32 @@ import {MatDialogRef} from '@angular/material';
 export class LoginDialogComponent {
 
   hide = true;
-  username: string;
   password: string;
+  email: string;
+  error: string;
 
   constructor(
     private dialogRef: MatDialogRef<LoginDialogComponent>,
-    // private authenticationService: AuthService
-  ) {}
+    private authenticationService: AuthService
+  ) {
+  }
 
   onCancelClick(): void {
     this.dialogRef.close();
   }
 
   registerClick(): void {
-    // this.authenticationService.signIn(this.username, this.password);
-    this.dialogRef.close();
+    this.authenticationService.login(this.email, this.password).subscribe(
+      (data) => {
+        if (data.success) {
+          this.dialogRef.close(data.token);
+        }
+      },
+      error1 => {
+        this.error = 'Auth error';
+      }
+    );
+
+
   }
 }
