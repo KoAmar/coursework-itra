@@ -6,12 +6,14 @@ import {PageNotFoundComponent} from './main-menu/pages/page-not-found/page-not-f
 import {HomePageComponent} from './main-menu/pages/home-page/home-page.component';
 import {PostPageComponent} from './main-menu/pages/post-page/post-page.component';
 import {ConfirmedPageComponent} from './main-menu/pages/confirmed-page/confirmed-page.component';
+import {AuthGuard} from './guards/auth.guard';
+import {AdminGuard} from './guards/admin.guard';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
-  {path: 'post', component: PostPageComponent},
-  {path: 'admin', component: AdminPageComponent},
-  {path: 'user', component: UserPageComponent},
+  {path: 'post', component: PostPageComponent, },
+  {path: 'admin', component: AdminPageComponent, canActivate: [AuthGuard, AdminGuard]},
+  {path: 'user', component: UserPageComponent, canActivate: [AuthGuard]},
   {path: 'confirmed', component: ConfirmedPageComponent},
   {path: '**', component: PageNotFoundComponent},
 ];

@@ -1,5 +1,7 @@
 export class User {
-  id: boolean;
+  id: string;
   login: string;
   email: string;
+  role: string;
+  activated: boolean;
 }

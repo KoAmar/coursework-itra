@@ -85,7 +85,9 @@ exports.user_login = (req, res, next) => {
                         {
                             login: user[0].login,
                             email: user[0].email,
-                            userId: user[0]._id,
+                            id: user[0]._id,
+                            role: user[0].role,
+                            activated: user[0].activated,
                         },
                         config.JWT_KEY,
                         {

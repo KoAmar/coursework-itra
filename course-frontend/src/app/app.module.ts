@@ -25,6 +25,8 @@ import {InfoDialogComponent} from './dialogs/info-dialog/info-dialog.component';
 
 import {AuthService} from './services/auth.service';
 import {CallDialogService} from './services/call-dialog.service';
+import {AuthGuard} from './guards/auth.guard';
+import {AdminGuard} from './guards/admin.guard';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,7 @@ import {CallDialogService} from './services/call-dialog.service';
     MatCardModule,
     FormsModule,
   ],
-  providers: [AuthService, CallDialogService],
+  providers: [AuthService, CallDialogService, AuthGuard, AdminGuard],
   bootstrap: [MainMenuComponent],
   entryComponents: [RegisterDialogComponent, LoginDialogComponent, InfoDialogComponent]
 })

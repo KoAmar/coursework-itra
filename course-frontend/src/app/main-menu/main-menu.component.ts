@@ -2,6 +2,7 @@ import {Component, HostBinding} from '@angular/core';
 import {MatDrawerToggleResult} from '@angular/material';
 import {OverlayContainer} from '@angular/cdk/overlay';
 import {CallDialogService} from '../services/call-dialog.service';
+import {AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-navigation',
@@ -13,8 +14,11 @@ export class MainMenuComponent {
   drawerToggleResultPromise: Promise<MatDrawerToggleResult>;
   private darkTheme: boolean;
 
+  // admin: boolean = this.authService.currentUser?;
+
   constructor(public overlayContainer: OverlayContainer,
-              private dialogService: CallDialogService) {
+              private dialogService: CallDialogService,
+              private authService: AuthService) {
     switch (localStorage.getItem('darkMode')) {
       case 'true':
         this.setDarkTheme();
@@ -48,6 +52,4 @@ export class MainMenuComponent {
     this.componentCssClass = theme;
 
   }
-
-
 }

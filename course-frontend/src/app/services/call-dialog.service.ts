@@ -3,7 +3,7 @@ import {LoginDialogComponent} from '../dialogs/login-dialog/login-dialog.compone
 import {RegisterDialogComponent} from '../dialogs/register-dialog/register-dialog.component';
 import {InfoDialogComponent} from '../dialogs/info-dialog/info-dialog.component';
 import {MatDialog} from '@angular/material';
-import {AuthService} from "./auth.service";
+import {AuthService} from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +22,9 @@ export class CallDialogService {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.showMessageBox(JSON.stringify(this.auth.parseJwt(result)));
+        AuthService.saveCurrentUserToken(result);
+        this.auth.setCurrentUser(result);
+        this.showMessageBox(`Welcome ${this.auth.currentUser.login}`);
       }
     });
   }
