@@ -11,7 +11,7 @@ export class ConfirmedPageComponent implements OnInit {
 
   constructor(private router: Router,
               private messegeBox: CallDialogService) {
-    messegeBox.showMessageBox('Now you can login om the website');
+    messegeBox.showMessageBox('Now you can login on the website');
     this.router.navigate(['/']);
   }
 
